@@ -5,24 +5,24 @@ export default {
   data(){
     return {
       name: "",
-      password: ""
+      password: "",
+      data_list : {},
+      logueado: false
     }
   },
   methods :{
-    AddUser(){
+    AddLogin(){
       if(!this.listaSkin.includes(this.username)) {
         this.listaSkin.push(this.username);
       }
       console.log(this.username)
     },
-    ShowTable(){
-      this.boolShow = true;
-    },
+    
     inputUsername(e) {
       this.username = e.target.value;
     },
     inputPassword(e) {
-      this.username = e.target.value;
+      this.password = e.target.value;
     },
   }
   
@@ -33,14 +33,19 @@ export default {
 
 <template>
     <header>
-        <div >
-            <br>
-            <label for="floatingInput">Username </label>            
+        <div v-if="!logueado " >
+            <h1>Login</h1>
+            <br >
+            <label for="floatingInput">Username xd </label>            
             <input @input="inputUsername" type="text" :value="username">
             <br>
             <br>
             <label for="floatingInput">Password </label>            
             <input @input="inputPassword" type="password" :value="username">
+            <br>
+            <br>
+            <button  @click="AddLogin" class="btn btn-primary">Agregar</button>
+            
      
 
         </div>
