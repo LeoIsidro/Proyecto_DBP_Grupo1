@@ -6,10 +6,11 @@ import HelloWorld from './components/HelloWorld.vue'
 <template>
   <div>
     <header>
-    <img alt="Vue logo" class="logo" src="@/assets/UTEC_LOGO.png" width="125" height="125"/>
+    <img alt="Vue logo" class="logo" src="@/assets/UTEC_LOGO.png" width="125" height="125" />
 
-    <div>
-      <HelloWorld msg='Adivina la Chiquimusic'/>
+    <div >
+      <HelloWorld msg="Adivina la Chiquimusic" />
+
       <nav>
         <RouterLink to="/lobby">Lobby</RouterLink>
         <RouterLink to="/login">Login</RouterLink>
@@ -31,12 +32,6 @@ import HelloWorld from './components/HelloWorld.vue'
 
 
 
-
-div {
-  text-align: center;
-  margin-left: 12rem;
-}
-
 .logo {
   display: block;
   margin: 0 auto 2rem;
@@ -46,7 +41,7 @@ nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 
@@ -86,13 +81,12 @@ nav a:first-of-type {
   }
 
   nav {
-    text-align: center;
-    margin-left: 0 rem;
-    font-size: 1 rem;
+    text-align: left;
+    margin-left: -1rem;
+    font-size: 1rem;
 
-    padding: 1rem ;
+    padding: 1rem 0;
     margin-top: 1rem;
   }
-
 }
 </style>
