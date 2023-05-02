@@ -2,15 +2,7 @@
 import {ref} from 'vue'
 export default {
   name: "App",
-  data(){
-    return {
-      name:ref(""),
-      password: ref(""),
-      data_list :ref([["spiderman216","utec1"],["Steve","utec2"],["Herobrine","utec3"]])
-      
-      
-    }
-  },
+
   methods :{
     AddRegister(){
       if(this.data_list)

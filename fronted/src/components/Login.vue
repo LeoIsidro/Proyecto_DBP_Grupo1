@@ -36,15 +36,15 @@ export default {
         <div v-if="!logueado " >
             <h1>Login</h1>
             <br >
-            <label for="floatingInput">Username xd </label>            
+            <label for="floatingInput">Username: </label>            
             <input @input="inputUsername" type="text" :value="username">
             <br>
             <br>
-            <label for="floatingInput">Password </label>            
+            <label for="floatingInput">Password: </label>            
             <input @input="inputPassword" type="password" :value="username">
             <br>
             <br>
-            <button  @click="AddLogin" class="btn btn-primary">Agregar</button>
+            <button  @click="AddLogin" class="btn btn-primary">Agregar: </button>
             
      
 
