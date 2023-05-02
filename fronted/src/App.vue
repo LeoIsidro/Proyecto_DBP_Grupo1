@@ -27,9 +27,6 @@ import HelloWorld from './components/HelloWorld.vue'
   
 </template>
 
-
-
-
 <style scoped>
 
 
@@ -46,6 +43,7 @@ nav {
   text-align: center;
   margin-top: 2rem;
 }
+
 
 nav a.router-link-exact-active {
   color: var(--color-text);

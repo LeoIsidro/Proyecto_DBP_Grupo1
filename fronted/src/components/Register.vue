@@ -32,15 +32,15 @@ export default {
         <div  >
             <h1>Register</h1>
             <br>
-            <label for="floatingInput">Username </label>            
+            <label for="floatingInput">Username: </label>            
             <input @input="inputUsername" type="text" :value="username">
             <br>
             <br>
-            <label for="floatingInput">Password </label>            
+            <label for="floatingInput">Password: </label>            
             <input @input="inputPassword" type="password" :value="password">
             <br>
             <br>
-            <button  @click="AddRegister" class="btn btn-primary">Agregar</button>
+            <button  @click="AddRegister" class="btn btn-primary">Agregar: </button>
             <h1>{{username }} {{password}} {{data_list}}</h1>
 
         </div>
