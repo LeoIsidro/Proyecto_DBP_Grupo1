@@ -14,7 +14,12 @@ export default {
   methods :{
     AddRegister(){
       if(this.data_list)
-      
+      {
+        this.data_list.push([this.name,this.password])  // Nuevo cambio
+      }
+      else{
+        this.data_list = [[this.name,this.password]]  // Nuevo cambio
+      }
     },
     
     inputUsername(e) {

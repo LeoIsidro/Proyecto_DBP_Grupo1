@@ -61,7 +61,7 @@ export default {
           
                  
            <h2 >Nombre: {{video1[1]["title"]}}</h2> 
-           <h2>Viewers: {{video1[3]["views"]}}</h2>
+           <h2>Viewers: ???</h2>
             <br>
             <button  @click="Boton_video1()" class="btn btn-primary">Video 1</button>
 
