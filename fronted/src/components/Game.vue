@@ -9,9 +9,6 @@ export default {
       points:ref( 0),
       data_api : youtube_api  ,
       video1:  youtube_api[(Math.floor(Math.random() * 100)).toString()],
-      
-      
-            
       video2:  youtube_api[(Math.floor(Math.random() * 100)).toString()]
       
     }
@@ -58,8 +55,7 @@ export default {
           <h1>{{points}} puntos</h1>
           <h1 class="green">Video 1:</h1>
           <img width="480" height="360" :src ="video1[2].banner">
-          
-                 
+        
            <h2 >Nombre: {{video1[1]["title"]}}</h2> 
            <h2>Viewers: ???</h2>
             <br>
