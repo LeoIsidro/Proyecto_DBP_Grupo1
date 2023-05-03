@@ -1,3 +1,4 @@
+
 <script>
 import {ref} from 'vue'
 export default {
@@ -45,9 +46,8 @@ export default {
             <br>
             <br>
             <button  @click="AddLogin" class="btn btn-primary">Agregar: </button>
-            
-     
 
         </div>
     </header>
 </template>
+

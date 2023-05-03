@@ -5,8 +5,9 @@
     <h3>¡Acierta lo más que puedas para obtener puntos!</h3>
     <h3>📌Si te equivocas se reinicia tu puntaje.</h3>
     <br>
-    <img alt="Vue logo" class="logo" src="@/assets/youtube_lobby.png"  />
-
+    <!-- cual es el error aqui? -->
+    
+    <img alt="Vue logo" class="logo" src='@/assets/youtube_lobby.png'/>
  
 </template>
 
