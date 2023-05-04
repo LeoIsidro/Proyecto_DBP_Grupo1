@@ -1,6 +1,5 @@
 <template>
-  <header>
-      
+  <div>
           <h1>Login</h1>
           <br>
           <br>
@@ -12,7 +11,7 @@
           <input type="password" v-bind:value="password" v-on="OnPassword" >
           <br>
           <br>
-          <button v-on:click="OnLogin" type="button" class="btn btn-primary">Agregar: </button>
+          <button v-on:click="OnLogin" type="button" class="btn btn-primary">Iniciar Sesion </button>
 
           <meta
         v-if="loggin && success"
@@ -22,7 +21,7 @@
           url='http://127.0.0.1:5173/game'"
       />
           
-  </header>
+    </div>
 </template>
 
 
@@ -35,8 +34,6 @@ export default {
       password: "",
       success: false,
       loggin: false,
-      mostrarClave: false,
-      icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
     }; // return
   }, //data
   methods: {
