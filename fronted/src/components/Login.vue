@@ -1,53 +1,77 @@
-
-<script>
-import {ref} from 'vue'
-export default {
-  name: "App",
-  data(){
-    return {
-      name: "",
-      password: "",
-      data_list : {},
-      logueado: false
-    }
-  },
-  methods :{
-    AddLogin(){
-      if(!this.listaSkin.includes(this.username)) {
-        this.listaSkin.push(this.username);
-      }
-      console.log(this.username)
-    },
-    
-    inputUsername(e) {
-      this.username = e.target.value;
-    },
-    inputPassword(e) {
-      this.password = e.target.value;
-    },
-  }
-  
-}
-</script>
-
-
-
 <template>
-    <header>
-        <div v-if="!logueado " >
-            <h1>Login</h1>
-            <br >
-            <label for="floatingInput">Username: </label>            
-            <input @input="inputUsername" type="text" :value="username">
-            <br>
-            <br>
-            <label for="floatingInput">Password: </label>            
-            <input @input="inputPassword" type="password" :value="username">
-            <br>
-            <br>
-            <button  @click="AddLogin" class="btn btn-primary">Agregar: </button>
+  <header>
+      
+          <h1>Login</h1>
+          <br>
+          <br>
+          <label>Username: </label>            
+          <input type="text" v-bind:value="username" v-on:input="OnUsername">
+          <br>
+          <br>
+          <label>Password: </label>            
+          <input type="password" v-bind:value="password" v-on="OnPassword" >
+          <br>
+          <br>
+          <button v-on:click="OnLogin" type="button" class="btn btn-primary">Agregar: </button>
 
-        </div>
-    </header>
+          <meta
+        v-if="loggin && success"
+        id="success"
+        http-equiv="refresh"
+        content="0;
+          url='http://127.0.0.1:5173/game'"
+      />
+          
+  </header>
 </template>
 
+
+<script>
+// JavaScript
+export default {
+  data() {
+    return {
+      username: "",
+      password: "",
+      success: false,
+      loggin: false,
+      mostrarClave: false,
+      icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
+    }; // return
+  }, //data
+  methods: {
+    OnUsername(e) {
+      this.loggin = false;
+      this.username = e.target.value;
+    },
+    OnPassword(e) {
+      this.loggin = false;
+      this.password = e.target.value;
+    },
+    OnLogin() {
+      const url = "http://localhost:5000/login/async";
+      const body = {
+        username: this.username,
+        password: this.password,
+      };
+      fetch(url, {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          this.loggin = true;
+          this.success = true;
+          if (data.success) {
+            sessionStorage.setItem("user", this.username);
+            this.$emit("user-login");
+          }
+        });
+    }
+  } // methods
+}
+</script>
