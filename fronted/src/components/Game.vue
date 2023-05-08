@@ -55,7 +55,7 @@ export default {
         <div >
           <iframe src="" frameborder="0"></iframe>
           <h1 class="green">Video 1:</h1>
-          <img width="480" height="360" :src ="video1[2].banner">
+          <center><img width="480" height="360" :src ="video1[2].banner"></center>
         
            <h2 >Nombre: {{video1[1]["title"]}}</h2> 
            <h2>Viewers: ???</h2>
@@ -65,7 +65,7 @@ export default {
            <br>
 
           <h1 class="green">Video 2:</h1>
-          <img width="480" height="360" :src ="video2 [2].banner">
+          <center><img width="480" height="360" :src ="video2 [2].banner"></center>
             <h2 >Nombre: {{video2[1]["title"]}}</h2>
             <h2>Viewers: ???</h2>
 
