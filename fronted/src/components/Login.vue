@@ -8,18 +8,18 @@
           <br>
           <br>
           <label>Password: </label>            
-          <input type="password" v-bind:value="password" v-on="OnPassword" >
+          <input type="password" v-bind:value="password" v-on:input="OnPassword" >
           <br>
           <br>
           <button v-on:click="OnLogin" type="button" class="btn btn-primary">Iniciar Sesion </button>
-
+          
           <meta
-        v-if="loggin && success"
-        id="success"
-        http-equiv="refresh"
-        content="0;
+          v-if="loggin && success"
+          id="success"
+          http-equiv="refresh"
+          content="0;
           url='http://127.0.0.1:5173/game'"
-      />
+          /> 
           
     </div>
 </template>
@@ -50,7 +50,7 @@ export default {
       const body = {
         username: this.username,
         password: this.password,
-      };
+      };  
       fetch(url, {
         method: "POST",
         body: JSON.stringify(body),
