@@ -10,7 +10,8 @@ export default {
       data_api : youtube_api  ,
       video1:  youtube_api[(Math.floor(Math.random() * 100)).toString()],
       video2:  youtube_api[(Math.floor(Math.random() * 100)).toString()] == this.video1 ? youtube_api[(Math.floor(Math.random() * 100)).toString()] : youtube_api[(Math.floor(Math.random() * 100)).toString()],
-      ad: true
+      ad: true,
+      success: false,
     }
   },
   methods :{
@@ -22,9 +23,29 @@ export default {
         this.points = this.points + 1;
       }
       else{
+        const url = "http://localhost:5000/juego/async";
+        const body = {
+          username: sessionStorage.getItem("user"),
+          points: this.points,
+        };
+        fetch(url, {
+          method: "POST",
+          body: JSON.stringify(body),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            this.success = true;
+          });
+
         this.points = 0;
         this.ad = false;
       }
+      
+      
       this.video1 = youtube_api[(Math.floor(Math.random() * 100)).toString()];
       this.video2 = youtube_api[(Math.floor(Math.random() * 100)).toString()];
     },
@@ -35,6 +56,23 @@ export default {
         this.points = this.points + 1;
       }
       else{
+        const url = "http://localhost:5000/juego/async";
+        const body = {
+          username: sessionStorage.getItem("user"),
+          points: this.points,
+        };
+        fetch(url, {
+          method: "POST",
+          body: JSON.stringify(body),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            this.success = true;
+          });
         this.points = 0;
         this.ad=false;
       }
