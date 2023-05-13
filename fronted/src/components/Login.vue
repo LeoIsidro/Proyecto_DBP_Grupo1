@@ -46,7 +46,7 @@ export default {
       this.password = e.target.value;
     },
     OnLogin() {
-      const url = "http://127.0.0.1:8000/login/async";
+      const url = "http://127.0.0.1:5000/login/async";
       const body = {
         username: this.username,
         password: this.password,
@@ -62,7 +62,7 @@ export default {
         .then((data) => {
           console.log(data);
           this.loggin = true;
-          this.success = true;
+          this.success = data.success;
           if (data.success) {
             sessionStorage.setItem("user", this.username);
             this.$emit("user-login");
