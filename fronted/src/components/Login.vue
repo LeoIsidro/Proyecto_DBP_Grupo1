@@ -46,7 +46,7 @@ export default {
       this.password = e.target.value;
     },
     OnLogin() {
-      const url = "http://localhost:5000/login/async";
+      const url = "http://127.0.0.1:8000/login/async";
       const body = {
         username: this.username,
         password: this.password,
