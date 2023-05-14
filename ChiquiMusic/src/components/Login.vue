@@ -1,4 +1,3 @@
-
 <template>
   <div>
           <h1>Login</h1>
@@ -13,7 +12,7 @@
           <br>
           <br>
           <button v-on:click="OnLogin" type="button" class="btn btn-primary">Iniciar Sesion </button>
-    </div>  
+    </div>
 </template>
 
 
@@ -33,14 +32,13 @@ export default {
     OnUsername(e) {
       this.loggin = false;
       this.username = e.target.value;
-      console.log(this.serverIP)
     },
     OnPassword(e) {
       this.loggin = false;
       this.password = e.target.value;
     },
     OnLogin() {
-      const url = "http://52.21.99.132:8002/login";
+      const url = "http://44.209.248.143:8002/login";
       const body = {
         username: this.username,
         password: this.password,
@@ -60,11 +58,10 @@ export default {
           if (data.success) {
             sessionStorage.setItem("user", this.username);
             this.$emit("user-login");
-            router.push('/game');
+            router.push('/game')
           }
         });
     }
-  }, // methods
- 
+  } // methods
 }
 </script>

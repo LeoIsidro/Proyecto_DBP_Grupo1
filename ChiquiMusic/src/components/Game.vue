@@ -23,7 +23,7 @@ export default {
         this.points = this.points + 1;
       }
       else{
-        const url = "http://52.21.99.132:8004/score";
+        const url = "http://44.209.248.143:8004/score";
         const body = {
           username: sessionStorage.getItem("user"),
           points: this.points,
@@ -56,7 +56,7 @@ export default {
         this.points = this.points + 1;
       }
       else{
-        const url = "http://52.21.99.132:8004/score";
+        const url = "http://44.209.248.143:8004/score";
         const body = {
           username: sessionStorage.getItem("user"),
           points: this.points,

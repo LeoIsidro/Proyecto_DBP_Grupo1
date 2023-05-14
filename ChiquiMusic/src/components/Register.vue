@@ -24,6 +24,8 @@
 
 
 <script>
+import router from '@/router';
+// JavaScript
 export default {
   //name: "RegisterView",
   data(){
@@ -34,14 +36,12 @@ export default {
       age: "",
       register: false,
       success: false,
-      serverIP: "",
     };
   },
   methods: {
     onUsernameInput(e) {
       this.register = false;
       this.username = e.target.value;
-      console.log(this.serverIP)
     },
     onPasswordInput(e) {
       this.register = false;
@@ -56,7 +56,7 @@ export default {
       this.age = e.target.value;
     },
     onRegister() {
-      const url = "http://52.21.99.132:8003/register";
+      const url = "http://44.209.248.143:8003/register";
       const body = {
         username: this.username,
         email: this.email,
@@ -74,11 +74,13 @@ export default {
         .then((data) => {
           console.log(data);
           this.register = true;
-          this.success = true;
+          this.success = data.success;
+          if (data.success) {
+            router.push("/login");
+          }
         });
     }
   },
- 
 };
 </script>
 
